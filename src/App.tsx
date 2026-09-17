@@ -6,7 +6,7 @@ import FormulariosAgendamentos from './components/FormulariosAgendamentos'
 import type { Agendamento } from './types/Agendamento'
 
 function App() {
-const [agendamentos, setAgendamentos] = useState<Agendamento[]>([
+const [agendamentos] = useState<Agendamento[]>([
     {
       id: 1,
       quadra: "Quadra 1",
@@ -77,7 +77,9 @@ const [agendamentos, setAgendamentos] = useState<Agendamento[]>([
             (agendamento) => agendamento.status === "Cancelado"
           ).length}
         />
-        <FormulariosAgendamentos />
+        <FormulariosAgendamentos onAdicionar={function (): void {
+          throw new Error('Function not implemented.')
+        } } />
       </main>
     </>
   )
